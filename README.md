@@ -1,39 +1,43 @@
-![Cinemat Logo](./public/images/branding/logos/logo-w.png)
+![CINEMEET Logo](./public/images/branding/logos/logo-w.png)
 
-# About Project
+# Giới thiệu dự án
 
-Cinemat is a ticket reservation system developed using Laravel 8. It has features like user roles, authentication, automated reservations, and much more.
-See the live demo **[here](https://cinemat.zeiadmohamed.dev)**.
+**CINEMEET** là một hệ thống đặt vé xem phim được phát triển bằng **Laravel 8**.  
+Hệ thống có các chức năng như: phân quyền người dùng, xác thực đăng nhập, đặt vé tự động và nhiều tính năng khác.
 
-## What I learned
+Xem bản demo trực tiếp **[tại đây](https://cinemat.zeiadmohamed.dev)**.
 
--   Routing basics
--   MVC architecture
--   Blade templating language
--   Middlewares
--   Authentication and authorization basics
--   Relational databases (MySQL)
--   Database migrations
+## Những gì tôi học được
+
+-   Kiến thức cơ bản về Routing
+-   Kiến trúc MVC
+-   Ngôn ngữ template Blade
+-   Middleware
+-   Cơ bản về xác thực và phân quyền
+-   Cơ sở dữ liệu quan hệ (MySQL)
+-   Migration cơ sở dữ liệu
 -   Eloquent ORM
--   Database CRUD operations
--   HTML, CSS, JS
+-   Các thao tác CRUD với cơ sở dữ liệu
+-   HTML, CSS, JavaScript
 -   Alpine.js
--   File uploads
--   Searching and filtering through models
+-   Upload tệp
+-   Tìm kiếm và lọc dữ liệu trong Model
 
-## Usage
+## Cách sử dụng
 
-You can find a link to the website **[here](https://cinemat.zeiadmohamed.dev)**. The website has some movies already created, but you can log in as a manager and edit or create new movies. **[login](https://cinemat.zeiadmohamed.dev/login)**
+Bạn có thể truy cập website **[tại đây](https://cinemat.zeiadmohamed.dev)**.  
+Website đã có sẵn một số phim, bạn có thể đăng nhập với vai trò **Manager** để chỉnh sửa hoặc tạo phim mới.  
+**[Đăng nhập](https://cinemat.zeiadmohamed.dev/login)**
 
-> Note: The website resets automatically every 30 minutes.
+> Lưu ý: Website sẽ tự động reset dữ liệu sau mỗi 30 phút.
 
-### Credentials
+### Tài khoản mẫu
 
-| User Role | Email                        | Password     |
-| --------- | ---------------------------- | ------------ |
-| Admin     | admin&#64;cinemat&#46;com    | adminpass    |
-| Manager   | manager&#64;cinemat&#46;com  | managerpass  |
-| Customer  | customer&#64;cinemat&#46;com | customerpass |
+| Vai trò người dùng | Email                         | Mật khẩu    |
+| ------------------ | ----------------------------- | ----------- |
+| Admin              | admin&#64;cinemeet&#46;com    | adminpass   |
+| Manager            | manager&#64;cinemeet&#46;com  | managerpass |
+| Customer           | customer&#64;cinemeet&#46;com | customerpass |
 
 <br>
 
@@ -41,78 +45,78 @@ You can find a link to the website **[here](https://cinemat.zeiadmohamed.dev)**.
 
 <br>
 
-## Installation Instructions
+## Hướng dẫn cài đặt
 
 <br>
 
-1. Clone the repository by running the following command in your terminal or command prompt:
+1. Clone repository bằng cách chạy lệnh sau trong terminal hoặc command prompt:
     ```bash
     git clone https://github.com/ziadabdo98/Cinemat.git
     ```
-2. Change into the project directory:
+2. Di chuyển vào thư mục project:
     ```bash
     cd Cinemat
     ```
-3. Install the project dependencies using Composer. Ensure you have Composer installed on your machine. Run the following command:
+3. Cài đặt các thư viện cần thiết bằng Composer (đảm bảo máy đã cài Composer):
     ```bash
     composer install
     ```
-4. Create a copy of the .env.example file, name it .env, and enter database credentials:
+4. Tạo file cấu hình môi trường bằng cách sao chép `.env.example` thành `.env` và nhập thông tin database:
     ```bash
     cp .env.example .env
     ```
-5. Generate an application key:
+5. Tạo application key:
     ```bash
     php artisan key:generate
     ```
-6. Configure the .env file. Open the .env file in a text editor and set the necessary configuration options, such as database credentials and application-specific settings.
-7. Run the database migrations to create the required tables:
+6. Cấu hình file `.env`. Mở file `.env` và thiết lập các thông tin cần thiết như database và các cấu hình của ứng dụng.
+7. Chạy migration để tạo các bảng dữ liệu:
     ```bash
     php artisan migrate
     ```
-8. Optionally, seed the database with 20 movies, shows, users, and categories:
+8. (Tùy chọn) Tạo dữ liệu mẫu gồm 20 phim, suất chiếu, người dùng và danh mục:
     ```bash
     php artisan db:seed
     ```
-9. Create a symbolic link from public/storage to storage/app/public by:
+9. Tạo symbolic link từ `public/storage` đến `storage/app/public`:
     ```bash
     php artisan storage:link
     ```
-    The Laravel application will be accessible at the specified URL (usually http://localhost:8000).
-10. Finally, you can start the local development server:
+    Ứng dụng Laravel sẽ có thể truy cập tại URL (thường là http://localhost:8000).
+10. Cuối cùng, chạy server phát triển:
     ```bash
     php artisan serve
     ```
-    The Laravel application will be accessible at the specified URL (usually http://localhost:8000).
+    Ứng dụng Laravel sẽ có thể truy cập tại URL (thường là http://localhost:8000).
 
 <br>
 
-## User Roles
+## Phân quyền người dùng
 
 <br>
 
-**Administrator:**
+**Quản trị viên (Administrator):**
 
--   Manages users' creation and website authorities
--   Accepts requests from managers to become managers
--   Can delete existing users
+-   Quản lý việc tạo người dùng và phân quyền hệ thống
+-   Duyệt yêu cầu trở thành Manager
+-   Có thể xóa người dùng hiện có
 
-**Manager:**
+**Quản lý (Manager):**
 
--   Responsible for managing, creating, and modifying movie details
--   Responsible for managing, creating, and modifying shows
--   Can update information such as title, date, start and end time, screening room, and poster image
--   Can view the overall seat status for each show (vacant/reserved)
+-   Quản lý, tạo mới và chỉnh sửa thông tin phim
+-   Quản lý, tạo mới và chỉnh sửa suất chiếu
+-   Cập nhật thông tin như: tiêu đề phim, ngày chiếu, giờ bắt đầu và kết thúc, phòng chiếu, hình ảnh poster
+-   Xem tổng trạng thái ghế của từng suất chiếu (trống / đã đặt)
 
-**Customers:**
+**Khách hàng (Customer):**
 
--   Registered users who have provided their personal data
--   Can reserve movie tickets
--   Able to reserve any number of tickets for non-clashing movies
+-   Người dùng đã đăng ký và cung cấp thông tin cá nhân
+-   Có thể đặt vé xem phim
+-   Có thể đặt bất kỳ số lượng vé nào cho các suất chiếu không bị trùng thời gian
 
-**Guests:**
+**Khách (Guest):**
 
--   Unregistered or non-logged-in users
--   Can view current movies' details
--   Can log in or register (sign up) as a customer
--   Unable to reserve tickets
+-   Người dùng chưa đăng nhập
+-   Có thể xem thông tin phim đang chiếu
+-   Có thể đăng nhập hoặc đăng ký tài khoản
+-   Không thể đặt vé
